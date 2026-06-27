@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GraphyNdot - Design your own universe.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo"><a href="index.html"><span class="logo-text">Graphy<span class="dot">.</span>Ndot</span></a></div>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="active" data-key="nav_home">Home</a></li>
+                    <li><a href="about.html" data-key="nav_about">About</a></li>
+                    <li><a href="team.html" data-key="nav_team">Team</a></li>
+                    <li><a href="services.html" data-key="nav_services">Services</a></li>
+                    <li><a href="portfolio.html" data-key="nav_portfolio">Portfolio</a></li>
+                    <li><a href="lab.html" data-key="nav_lab">Lab</a></li>
+                    <li><a href="projects.html" data-key="nav_projects">Projects</a></li>
+                    <li><a href="contact.html" data-key="nav_contact">Contact</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <button class="lang-btn" data-lang="fr">FR</button>
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="mg">MG</button>
+                </div>
+                <div class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg"><div class="hero-overlay"></div></div>
+        <div class="container hero-content">
+            <h1 class="hero-title">
+                <span class="subline" data-key="hero_subline">Design your own</span>
+                <span class="mainline" data-key="hero_mainline">Universe.</span>
+            </h1>
+            <p class="hero-description" data-key="hero_desc">Independent creative studio · CGI · VFX · Animation · Madagascar</p>
+            <div class="hero-cta">
+                <a href="portfolio.html" class="btn btn-primary" data-key="hero_cta_portfolio">View Portfolio</a>
+                <a href="contact.html" class="btn btn-secondary" data-key="hero_cta_contact">Contact Us</a>
+            </div>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+
+    <!-- SHOWREEL -->
+    <section class="showreel-preview">
+        <div class="container">
+            <h2 data-key="showreel_title">Our Showreel</h2>
+            <div class="video-wrapper">
+                <video controls poster="images/background/showreel-poster.jpg">
+                    <source src="videos/showreel.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="studio-intro">
+        <div class="container">
+            <div class="intro-grid">
+                <div class="intro-text">
+                    <h2 data-key="intro_title">GraphyNdot</h2>
+                    <p data-key="intro_text1">Based in Antananarivo, Madagascar, GraphyNdot is an independent studio combining storytelling, animation, CGI and visual design using mainly free and open-source technologies.</p>
+                    <p data-key="intro_text2">Our mission: to create cinematic experiences that are accessible, innovative and rooted in a contemporary African identity.</p>
+                    <a href="about.html" class="btn btn-outline" data-key="intro_cta">Learn More</a>
+                </div>
+                <div class="intro-visual">
+                    <img src="images/studio/studio-banner.jpg" alt="GraphyNdot Studio" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services-summary">
+        <div class="container">
+            <h2 data-key="services_title">Our Services</h2>
+            <div class="service-grid" id="serviceGrid"></div>
+        </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="team-preview">
+        <div class="container">
+            <h2 data-key="team_title">The Team</h2>
+            <div class="team-grid" id="teamPreview"></div>
+            <div class="text-center">
+                <a href="team.html" class="btn btn-outline" data-key="team_cta">View Full Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL CTA -->
+    <section class="social-cta">
+        <div class="container">
+            <h2 data-key="social_title">Follow Us</h2>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/GraphyNdot/" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/yv_laroch/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@graphyndot6934" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.linkedin.com/in/yves-randrianantenaina" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-artstation"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-dailymotion"></i></a>
+            </div>
+            <div class="cta-block">
+                <p data-key="social_cta_text">A project? A collaboration?</p>
+                <a href="contact.html" class="btn btn-primary" data-key="social_cta_btn">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><span class="logo-text">Graphy<span class="dot">.</span>Ndot</span><p data-key="footer_tagline">Design your own universe.</p></div>
+                <div class="footer-links"><ul><li><a href="index.html" data-key="nav_home">Home</a></li><li><a href="about.html" data-key="nav_about">About</a></li><li><a href="portfolio.html" data-key="nav_portfolio">Portfolio</a></li><li><a href="contact.html" data-key="nav_contact">Contact</a></li></ul></div>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/yv_laroch/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@graphyndot6934" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/in/yves-randrianantenaina" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 GraphyNdot. <span data-key="footer_rights">All rights reserved.</span></p><p data-key="footer_credits">Made with ❤️ in Madagascar</p></div>
+        </div>
+    </footer>
+
+    <script>
+        // ============================================
+        // 1. TRADUCTIONS
+        // ============================================
+        const translations = {
+            fr: {
+                nav_home: "Accueil", nav_about: "À propos", nav_team: "Équipe",
+                nav_services: "Services", nav_portfolio: "Portfolio", nav_lab: "Lab",
+                nav_projects: "Projets", nav_contact: "Contact",
+                hero_subline: "Design your own", hero_mainline: "Universe.",
+                hero_desc: "Studio créatif indépendant · CGI · VFX · Animation · Madagascar",
+                hero_cta_portfolio: "Voir le portfolio", hero_cta_contact: "Nous contacter",
+                showreel_title: "Notre Showreel",
+                intro_title: "GraphyNdot",
+                intro_text1: "Basé à Antananarivo, Madagascar, GraphyNdot est un studio indépendant qui allie narration, animation, CGI et design visuel en utilisant principalement des technologies libres et open-source.",
+                intro_text2: "Notre mission : créer des expériences cinématographiques accessibles, innovantes et ancrées dans une identité africaine contemporaine.",
+                intro_cta: "En savoir plus",
+                services_title: "Nos Services",
+                team_title: "L'Équipe", team_cta: "Voir toute l'équipe",
+                social_title: "Suivez-nous", social_cta_text: "Un projet ? Une collaboration ?",
+                social_cta_btn: "Contactez-nous",
+                footer_tagline: "Design your own universe.",
+                footer_rights: "Tous droits réservés.",
+                footer_credits: "Fait avec ❤️ à Madagascar",
+                about_title: "À propos du studio",
+                about_history: "Fondé par Yv Laroch, GraphyNdot est né de la volonté de démocratiser la création visuelle. En utilisant des outils open-source, nous prouvons que le talent et la créativité n'ont pas de frontières.",
+                about_mission: "Notre Mission",
+                about_mission_text: "Créer des expériences cinématographiques en utilisant des technologies accessibles et une narration créative.",
+                about_vision: "Notre Vision",
+                about_vision_text: "Devenir un studio créatif africain reconnu produisant des histoires originales et des expériences visuelles pour des publics locaux et internationaux.",
+                about_values: "Nos Valeurs",
+                value_creativity: "Créativité", value_collaboration: "Collaboration",
+                value_accessibility: "Accessibilité", value_learning: "Apprentissage",
+                value_innovation: "Innovation", value_independence: "Indépendance",
+                team_full_title: "Rencontrez l'équipe", services_full_title: "Ce que nous faisons",
+                portfolio_title: "Notre travail", portfolio_filter_all: "Tous",
+                lab_title: "Laboratoire & Expériences",
+                lab_desc: "Recherche, prototypes, tests et coulisses.",
+                projects_featured: "Projet vedette", projects_upcoming: "Projets à venir",
+                contact_title: "Parlons de votre projet", contact_email: "Email",
+                contact_available: "Disponible pour", contact_freelance: "Projets freelance",
+                contact_collab: "Collaborations avec studios", contact_consulting: "Conseil",
+                contact_partnerships: "Partenariats", contact_training: "Formation",
+                contact_form_name: "Votre nom", contact_form_email: "Votre email",
+                contact_form_message: "Votre message", contact_form_send: "Envoyer"
+            },
+            en: {
+                nav_home: "Home", nav_about: "About", nav_team: "Team",
+                nav_services: "Services", nav_portfolio: "Portfolio", nav_lab: "Lab",
+                nav_projects: "Projects", nav_contact: "Contact",
+                hero_subline: "Design your own", hero_mainline: "Universe.",
+                hero_desc: "Independent creative studio · CGI · VFX · Animation · Madagascar",
+                hero_cta_portfolio: "View Portfolio", hero_cta_contact: "Contact Us",
+                showreel_title: "Our Showreel",
+                intro_title: "GraphyNdot",
+                intro_text1: "Based in Antananarivo, Madagascar, GraphyNdot is an independent studio combining storytelling, animation, CGI and visual design using mainly free and open-source technologies.",
+                intro_text2: "Our mission: to create cinematic experiences that are accessible, innovative and rooted in a contemporary African identity.",
+                intro_cta: "Learn More",
+                services_title: "Our Services",
+                team_title: "The Team", team_cta: "View Full Team",
+                social_title: "Follow Us", social_cta_text: "A project? A collaboration?",
+                social_cta_btn: "Get in Touch",
+                footer_tagline: "Design your own universe.",
+                footer_rights: "All rights reserved.",
+                footer_credits: "Made with ❤️ in Madagascar",
+                about_title: "About the Studio",
+                about_history: "Founded by Yv Laroch, GraphyNdot was born from the desire to democratize visual creation. Using open-source tools, we prove that talent and creativity have no borders.",
+                about_mission: "Our Mission",
+                about_mission_text: "Create cinematic experiences using accessible technologies and creative storytelling.",
+                about_vision: "Our Vision",
+                about_vision_text: "Become a recognized African creative studio producing original stories and visual experiences for local and international audiences.",
+                about_values: "Our Values",
+                value_creativity: "Creativity", value_collaboration: "Collaboration",
+                value_accessibility: "Accessibility", value_learning: "Learning",
+                value_innovation: "Innovation", value_independence: "Independence",
+                team_full_title: "Meet the Team", services_full_title: "What We Do",
+                portfolio_title: "Our Work", portfolio_filter_all: "All",
+                lab_title: "Lab & Experiments",
+                lab_desc: "Research, prototypes, tests and behind-the-scenes.",
+                projects_featured: "Featured Project", projects_upcoming: "Upcoming Projects",
+                contact_title: "Let's Talk", contact_email: "Email",
+                contact_available: "Available for", contact_freelance: "Freelance projects",
+                contact_collab: "Studio collaborations", contact_consulting: "Consulting",
+                contact_partnerships: "Partnerships", contact_training: "Training",
+                contact_form_name: "Your Name", contact_form_email: "Your Email",
+                contact_form_message: "Your Message", contact_form_send: "Send Message"
+            },
+            mg: {
+                nav_home: "Fandraisana",
+                nav_about: "Momba anay",
+                nav_team: "Ekipa",
+                nav_services: "Tolotra",
+                nav_portfolio: "Portfolio",
+                nav_lab: "Laboratoara",
+                nav_projects: "Tetikasa",
+                nav_contact: "Fifandraisana",
+                hero_subline: "Rafeto ny tontolo anao manokana",
+                hero_mainline: "Tontolo iainana nomerika.",
+                hero_desc: "Studio kreatifa mahaleo tena · CGI · VFX · Sary mihetsika · Madagasikara",
+                hero_cta_portfolio: "Hijery ny portfolio",
+                hero_cta_contact: "Hifandray aminay",
+                intro_title: "GraphyNdot",
+                intro_text1: "Miorina ao Antananarivo, Madagasikara, GraphyNdot dia studio mahaleo tena mampifangaro fitantarana, sary mihetsika, CGI ary endrika sary (design visuel) amin'ny fampiasana teknolojia open-source.",
+                intro_text2: "Ny tanjonay: hampiaina sarimihetsika azo tsapain-tanana, amin'ny endriny vao, ary mifototra amin'ny maha-afrikana ankehitriny.",
+                intro_cta: "Hamantatra bebe kokoa",
+                services_title: "Ireo tolotra",
+                team_title: "Ny Ekipa",
+                team_cta: "Hijery ny ekipa rehetra",
+                social_title: "Araho izahay",
+                social_cta_text: "Manana Tetikasa? Maniry fiaraha-miasa?",
+                social_cta_btn: "Mifandraisa aminay",
+                footer_tagline: "Rafeto ny tontolo anao manokana.",
+                footer_rights: "Zo rehetra voatokana avokoa.",
+                footer_credits: "Vita amin'ny ❤️ teto Madagasikara",
+                about_title: "Momba ny Studio",
+                about_history: "Natsangan'i Yv Laroch, GraphyNdot dia teraka avy amin'ny faniriana hizara ny famoronana an-tsary. Amin'ny fampiasana fitaovana open-source, porofoinay fa tsy misy fetra ny fahaiza-mamorona.",
+                about_mission: "Ny Tanjonay",
+                about_mission_text: "Hampiaina sarimihetsika miavaka amin'ny alalan'ny teknolojia tsy saro-tadiavina sy fitantarana mahatsikaiky.",
+                about_vision: "Ny Vinanay",
+                about_vision_text: "Lasa studio kreatifa afrikana malaza mamokatra tantara sy seho hita maso miavaka ho an'ny mpijery eo an-toerana sy manerantany.",
+                about_values: "Ny Soatoavinay",
+                value_creativity: "Famoronana",
+                value_collaboration: "Fiaraha-miasa",
+                value_accessibility: "Tsy saro-tadiavina",
+                value_learning: "Fianarana",
+                value_innovation: "Fanavaozana",
+                value_independence: "Fahaleovantena",
+                team_full_title: "Mpikambana ao amin'ny ekipa",
+                services_full_title: "Inona no ataonay",
+                portfolio_title: "Ny asanay",
+                portfolio_filter_all: "Rehetra",
+                lab_title: "Laboratoara sy Fanandramana",
+                lab_desc: "Fikarohana, prototype, fitsapana ary ny ambadiky ny sehatra.",
+                projects_featured: "Tetikasa asongadina",
+                projects_upcoming: "Tetikasa ho avy",
+                contact_title: "Andao hiresaka",
+                contact_email: "Mailaka",
+                contact_available: "Misokatra ho an'ny",
+                contact_freelance: "Tetikasa freelance",
+                contact_collab: "Fiaraha-miasa amin'ny studio",
+                contact_consulting: "Fanoroana",
+                contact_partnerships: "Fiaraha-miasa",
+                contact_training: "Fanofanana",
+                contact_form_name: "Anaranao",
+                contact_form_email: "Mailaka",
+                contact_form_message: "Ny hafatrao",
+                contact_form_send: "Andefa ny hafatra"
+            }
+        };
+
+        let currentLang = localStorage.getItem('preferred_lang') || 'en';
+
+        function applyTranslations(lang) {
+            const data = translations[lang];
+            if (!data) return;
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.dataset.key;
+                if (data[key] !== undefined) {
+                    if (el.innerHTML.includes('<') || el.innerHTML.includes('</')) {
+                        el.innerHTML = data[key];
+                    } else {
+                        el.textContent = data[key];
+                    }
+                }
+            });
+            document.documentElement.lang = lang;
+            localStorage.setItem('preferred_lang', lang);
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+        }
+
+        function switchLanguage(lang) {
+            if (translations[lang]) applyTranslations(lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            applyTranslations(currentLang);
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    switchLanguage(this.dataset.lang);
+                });
+            });
+            const toggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+            if (toggle && navLinks) {
+                toggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('open');
+                });
+            }
+        });
+    </script>
+    <script src="js/loadData.js"></script>
+</body>
+</html>

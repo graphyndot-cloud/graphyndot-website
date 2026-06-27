@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - GraphyNdot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+
+    <!-- HEADER (copié depuis index.html) -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo"><a href="index.html"><span class="logo-text">Graphy<span class="dot"></span>Ndot</span></a></div>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" data-key="nav_home">Home</a></li>
+                    <li><a href="about.html" class="active" data-key="nav_about">About</a></li>
+                    <li><a href="team.html" data-key="nav_team">Team</a></li>
+                    <li><a href="services.html" data-key="nav_services">Services</a></li>
+                    <li><a href="portfolio.html" data-key="nav_portfolio">Portfolio</a></li>
+                    <li><a href="lab.html" data-key="nav_lab">Lab</a></li>
+                    <li><a href="projects.html" data-key="nav_projects">Projects</a></li>
+                    <li><a href="contact.html" data-key="nav_contact">Contact</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <button class="lang-btn" data-lang="fr">FR</button>
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="mg">MG</button>
+                </div>
+                <div class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE ABOUT -->
+    <main class="page-about">
+        <section class="about-hero">
+            <div class="container">
+                <h1 data-key="about_title">About the Studio</h1>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p data-key="about_history">Founded by Yv Laroch, GraphyNdot was born from the desire to democratize visual creation. Using open-source tools, we prove that talent and creativity have no borders.</p>
+                        <div class="mission-vision">
+                            <div>
+                                <h3><i class="fas fa-bullseye" style="color:var(--accent-blue);"></i> <span data-key="about_mission">Our Mission</span></h3>
+                                <p data-key="about_mission_text">Create cinematic experiences using accessible technologies and creative storytelling.</p>
+                            </div>
+                            <div style="margin-top:2rem;">
+                                <h3><i class="fas fa-eye" style="color:var(--accent-purple);"></i> <span data-key="about_vision">Our Vision</span></h3>
+                                <p data-key="about_vision_text">Become a recognized African creative studio producing original stories and visual experiences for local and international audiences.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="images/studio/studio-team.jpg" alt="GraphyNdot Studio" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-values">
+            <div class="container">
+                <h2 data-key="about_values">Our Values</h2>
+                <div class="values-grid">
+                    <div class="value-card"><i class="fas fa-lightbulb"></i><h4 data-key="value_creativity">Creativity</h4></div>
+                    <div class="value-card"><i class="fas fa-handshake"></i><h4 data-key="value_collaboration">Collaboration</h4></div>
+                    <div class="value-card"><i class="fas fa-universal-access"></i><h4 data-key="value_accessibility">Accessibility</h4></div>
+                    <div class="value-card"><i class="fas fa-graduation-cap"></i><h4 data-key="value_learning">Learning</h4></div>
+                    <div class="value-card"><i class="fas fa-rocket"></i><h4 data-key="value_innovation">Innovation</h4></div>
+                    <div class="value-card"><i class="fas fa-flag"></i><h4 data-key="value_independence">Independence</h4></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+   
+    <!-- ========================================= -->
+    <!-- FOOTER INTÉGRÉ DIRECTEMENT                 -->
+    <!-- ========================================= -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo-text">Graphy<span class="dot"></span>Ndot</span>
+                    <p data-key="footer_tagline">Design your own universe.</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="index.html" data-key="nav_home">Home</a></li>
+                        <li><a href="about.html" data-key="nav_about">About</a></li>
+                        <li><a href="portfolio.html" data-key="nav_portfolio">Portfolio</a></li>
+                        <li><a href="contact.html" data-key="nav_contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 GraphyNdot. <span data-key="footer_rights">All rights reserved.</span></p>
+                <p data-key="footer_credits">Made with ❤️ in Madagascar</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================= -->
+    <!-- SCRIPTS                                    -->
+    <!-- ========================================= -->
+    <script src="js/translations.js"></script>
+    <script src="js/loadData.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

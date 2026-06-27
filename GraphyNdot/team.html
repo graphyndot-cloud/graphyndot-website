@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team - GraphyNdot</title>
+    <!-- MÊME HEAD QUE LES AUTRES (polices, CSS, FontAwesome) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+   <!-- ========================================= -->
+    <!-- HEADER INTÉGRÉ DIRECTEMENT (pas de fetch) -->
+    <!-- ========================================= -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><span class="logo-text">Graphy<span class="dot"></span>Ndot</span></a>
+            </div>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html"  data-key="nav_home">Home</a></li>
+                    <li><a href="about.html" data-key="nav_about">About</a></li>
+                    <li><a href="team.html" class="active" data-key="nav_team">Team</a></li>
+                    <li><a href="services.html" data-key="nav_services">Services</a></li>
+                    <li><a href="portfolio.html" data-key="nav_portfolio">Portfolio</a></li>
+                    <li><a href="lab.html" data-key="nav_lab">Lab</a></li>
+                    <li><a href="projects.html" data-key="nav_projects">Projects</a></li>
+                    <li><a href="contact.html" data-key="nav_contact">Contact</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <button class="lang-btn" data-lang="fr">FR</button>
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="mg">MG</button>
+                </div>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span><span></span><span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========================================= -->
+    <!-- ========================================= -->
+
+    <!-- ====== CONTENU UNIQUE DE LA PAGE ====== -->
+
+
+    <main style="padding-top: 100px; padding-bottom:4rem;">
+        <div class="container">
+            <h1 data-key="team_full_title">Rencontrez l'équipe</h1>
+            <div class="team-grid-full" id="fullTeamGrid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap:2rem; margin-top:2rem;">
+                <!-- Chargé dynamiquement -->
+            </div>
+        </div>
+    </main>
+
+
+    <!-- ========================================= -->
+    <!-- FOOTER INTÉGRÉ DIRECTEMENT                 -->
+    <!-- ========================================= -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo-text">Graphy<span class="dot"></span>Ndot</span>
+                    <p data-key="footer_tagline">Design your own universe.</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="index.html" data-key="nav_home">Home</a></li>
+                        <li><a href="about.html" data-key="nav_about">About</a></li>
+                        <li><a href="portfolio.html" data-key="nav_portfolio">Portfolio</a></li>
+                        <li><a href="contact.html" data-key="nav_contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 GraphyNdot. <span data-key="footer_rights">All rights reserved.</span></p>
+                <p data-key="footer_credits">Made with ❤️ in Madagascar</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================= -->
+    <!-- SCRIPTS                                    -->
+    <!-- ========================================= -->
+    <script src="js/translations.js"></script>
+    <script src="js/loadData.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

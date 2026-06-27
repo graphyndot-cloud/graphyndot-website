@@ -1,0 +1,67 @@
+# admin/config.yml
+
+backend:
+  name: git-gateway
+  branch: main
+
+# Dossier où les images uploadées seront stockées
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+# Collections (vos contenus modifiables)
+collections:
+  # ----- ÉQUIPE -----
+  - name: "team"
+    label: "Équipe"
+    folder: "_data/team"
+    create: true
+    slug: "{{prenom}}-{{nom}}"
+    fields:
+      - { label: "Prénom", name: "prenom", widget: "string" }
+      - { label: "Nom", name: "nom", widget: "string", required: false }
+      - { label: "Rôle", name: "role", widget: "string" }
+      - { label: "Biographie", name: "bio", widget: "text", required: false }
+      - { label: "Photo", name: "photo", widget: "image", required: false }
+      - { label: "Ordre d'affichage", name: "order", widget: "number", default: 0, required: false }
+
+  # ----- SERVICES -----
+  - name: "services"
+    label: "Services"
+    folder: "_data/services"
+    create: true
+    slug: "{{nom}}"
+    fields:
+      - { label: "Nom du service", name: "nom", widget: "string" }
+      - { label: "Icône Font Awesome", name: "icon", widget: "string", default: "fa-cubes", hint: "Ex: fa-cubes, fa-film, fa-palette" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Ordre d'affichage", name: "order", widget: "number", default: 0, required: false }
+
+  # ----- PORTFOLIO -----
+  - name: "portfolio"
+    label: "Portfolio"
+    folder: "_data/portfolio"
+    create: true
+    slug: "{{titre}}"
+    fields:
+      - { label: "Titre", name: "titre", widget: "string" }
+      - { label: "Catégorie", name: "categorie", widget: "select", options: ["CGI", "VFX", "2D Animation", "3D Animation", "Motion Design", "Graphic Design", "Video Editing", "Film Production", "Other"] }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Logiciels utilisés", name: "logiciels", widget: "list", default: ["Blender"] }
+      - { label: "Image principale", name: "image", widget: "image" }
+      - { label: "Crédits", name: "credits", widget: "string", required: false }
+      - { label: "Année", name: "annee", widget: "number", required: false }
+      - { label: "Ordre d'affichage", name: "order", widget: "number", default: 0, required: false }
+
+  # ----- PROJETS À VENIR -----
+  - name: "projects"
+    label: "Projets à venir"
+    folder: "_data/projects"
+    create: true
+    slug: "{{titre}}"
+    fields:
+      - { label: "Titre", name: "titre", widget: "string" }
+      - { label: "Type", name: "type", widget: "string", hint: "Ex: Court-métrage, Série, Concept Art" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Statut", name: "statut", widget: "select", options: ["En production", "En pré-production", "En post-production", "Terminé"], default: "En production" }
+      - { label: "Équipe", name: "equipe", widget: "list", default: ["Yv Laroch"], required: false }
