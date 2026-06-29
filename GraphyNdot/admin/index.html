@@ -4,10 +4,53 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GraphyNdot - Backoffice</title>
-    <!-- Chargement de Decap CMS -->
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <style>
+        /* Style minimal pour le chargement */
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0a0a0f;
+            color: #fff;
+            font-family: system-ui, -apple-system, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .loading {
+            text-align: center;
+            padding: 2rem;
+        }
+        .loading h1 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #888;
+        }
+        .loading .spinner {
+            border: 3px solid #1a1a24;
+            border-top: 3px solid #00b4ff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
-    <!-- L'interface du CMS sera injectée ici -->
+    <!-- Élément où Decap CMS va s'injecter -->
+    <div id="root">
+        <div class="loading">
+            <div class="spinner"></div>
+            <h1>Chargement du backoffice...</h1>
+        </div>
+    </div>
+
+    <!-- Chargement de Decap CMS -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
 </html>
