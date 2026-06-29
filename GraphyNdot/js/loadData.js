@@ -1,5 +1,5 @@
 // ============================================
-// loadData.js - Version Hybride (CMS + Fallback)
+// loadData.js - Version CORRIGÉE (Robuste)
 // ============================================
 
 // ----- DONNÉES INTÉGRÉES (FALLBACK) -----
@@ -44,7 +44,7 @@ const fallbackData = {
             titre: "FITO",
             type: "Court-métrage d'animation",
             statut: "En production",
-            description: "FITO est un projet d'animation qui explore les thèmes de l'identité et de la résilience à travers un univers visuel unique. Mêlant techniques 2D et 3D, ce court-métrage est la vitrine du savoir-faire de GraphyNdot.",
+            description: "FITO est un projet d'animation qui explore les thèmes de l'identité et de la résilience à travers un univers visuel unique.",
             image: "images/projets/fito-banner.jpg",
             equipe: ["Yv Laroch", "Sarah", "Safidy"]
         },
@@ -59,7 +59,6 @@ const fallbackData = {
 // ----- FONCTION POUR CHARGER LES DONNÉES (avec fallback) -----
 async function loadData(collection) {
     try {
-        // Essayer de charger depuis le CMS (_data/)
         const response = await fetch(`_data/${collection}.json`);
         if (response.ok) {
             const data = await response.json();
@@ -69,7 +68,6 @@ async function loadData(collection) {
     } catch (error) {
         console.log(`ℹ️ Pas de données CMS pour ${collection}, utilisation du fallback`);
     }
-    // Fallback : utiliser les données intégrées
     return fallbackData[collection] || [];
 }
 
@@ -89,7 +87,10 @@ async function loadTeamPreview() {
 
 async function loadFullTeam() {
     const container = document.getElementById('fullTeamGrid');
-    if (!container) return;
+    if (!container) {
+        console.warn('fullTeamGrid non trouvé sur cette page');
+        return;
+    }
     const members = await loadData('team');
     container.innerHTML = members.map(m => `
         <div class="team-card">
@@ -98,6 +99,7 @@ async function loadFullTeam() {
             <p class="role">${m.role}</p>
         </div>
     `).join('');
+    console.log(`✅ Équipe affichée (${members.length} membres)`);
 }
 
 async function loadServicesPreview() {
@@ -115,7 +117,10 @@ async function loadServicesPreview() {
 
 async function loadFullServices() {
     const container = document.getElementById('fullServicesGrid');
-    if (!container) return;
+    if (!container) {
+        console.warn('fullServicesGrid non trouvé sur cette page');
+        return;
+    }
     const services = await loadData('services');
     container.innerHTML = services.map(s => `
         <div class="service-card">
@@ -124,11 +129,15 @@ async function loadFullServices() {
             <p style="color:var(--text-secondary); font-size:0.95rem;">${s.description}</p>
         </div>
     `).join('');
+    console.log(`✅ Services affichés (${services.length} services)`);
 }
 
 async function loadPortfolio() {
     const container = document.getElementById('portfolioGrid');
-    if (!container) return;
+    if (!container) {
+        console.warn('portfolioGrid non trouvé sur cette page');
+        return;
+    }
     const items = await loadData('portfolio');
     container.innerHTML = items.map(item => `
         <div class="portfolio-item" data-category="${item.categorie}">
@@ -142,33 +151,39 @@ async function loadPortfolio() {
             </div>
         </div>
     `).join('');
+    console.log(`✅ Portfolio affiché (${items.length} projets)`);
 }
 
 async function loadProjects() {
-    // Projet vedette
     const featuredContainer = document.getElementById('featuredProject');
+    const upcomingContainer = document.getElementById('upcomingProjects');
+
+    if (!featuredContainer && !upcomingContainer) {
+        console.warn('Conteneurs projects non trouvés sur cette page');
+        return;
+    }
+
+    const data = await loadData('projects');
+    const featured = data.featured || fallbackData.projects.featured;
+    const upcoming = data.upcoming || fallbackData.projects.upcoming;
+
     if (featuredContainer) {
-        const data = await loadData('projects');
-        const f = data.featured || fallbackData.projects.featured;
         featuredContainer.innerHTML = `
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:center;">
                 <div>
-                    <span style="color:var(--accent-blue); text-transform:uppercase; font-weight:600;">${f.type}</span>
-                    <h2 style="font-size:2.5rem; color:#fff;">${f.titre}</h2>
-                    <p style="color:var(--text-secondary);">${f.description}</p>
-                    <p style="margin-top:1rem;"><strong>Équipe :</strong> ${f.equipe.join(', ')}</p>
-                    <span style="display:inline-block; background:var(--accent-purple); color:#fff; padding:0.2rem 1rem; border-radius:20px; font-size:0.8rem; margin-top:0.5rem;">${f.statut}</span>
+                    <span style="color:var(--accent-blue); text-transform:uppercase; font-weight:600;">${featured.type}</span>
+                    <h2 style="font-size:2.5rem; color:#fff;">${featured.titre}</h2>
+                    <p style="color:var(--text-secondary);">${featured.description}</p>
+                    <p style="margin-top:1rem;"><strong>Équipe :</strong> ${featured.equipe.join(', ')}</p>
+                    <span style="display:inline-block; background:var(--accent-purple); color:#fff; padding:0.2rem 1rem; border-radius:20px; font-size:0.8rem; margin-top:0.5rem;">${featured.statut}</span>
                 </div>
-                <div><img src="${f.image || 'images/placeholder.jpg'}" alt="${f.titre}" style="width:100%; border-radius:12px;" /></div>
+                <div><img src="${featured.image || 'images/placeholder.jpg'}" alt="${featured.titre}" style="width:100%; border-radius:12px;" /></div>
             </div>
         `;
+        console.log('✅ Projet vedette affiché');
     }
 
-    // Projets à venir
-    const upcomingContainer = document.getElementById('upcomingProjects');
     if (upcomingContainer) {
-        const data = await loadData('projects');
-        const upcoming = data.upcoming || fallbackData.projects.upcoming;
         upcomingContainer.innerHTML = upcoming.map(p => `
             <div style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:12px; padding:1.5rem;">
                 <h4 style="color:#fff;">${p.titre}</h4>
@@ -176,11 +191,12 @@ async function loadProjects() {
                 <p style="color:var(--text-secondary); font-size:0.9rem; margin-top:0.5rem;">${p.description}</p>
             </div>
         `).join('');
+        console.log('✅ Projets à venir affichés');
     }
 }
 
 // ----- FILTRAGE PORTFOLIO -----
-document.addEventListener('DOMContentLoaded', () => {
+function setupPortfolioFilters() {
     const btns = document.querySelectorAll('.filter-btn');
     btns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -196,21 +212,26 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
-});
+}
 
-// ----- INITIALISATION PAR PAGE -----
-document.addEventListener('DOMContentLoaded', () => {
-    const path = window.location.pathname;
+// ============================================
+// INITIALISATION ROBUSTE (basée sur les ID)
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🚀 loadData.js initialisé');
 
-    // Accueil
-    if (path.includes('index.html') || path === '/' || path.endsWith('/')) {
-        loadTeamPreview();
-        loadServicesPreview();
+    // Détection automatique basée sur les conteneurs présents
+    if (document.getElementById('teamPreview')) loadTeamPreview();
+    if (document.getElementById('fullTeamGrid')) loadFullTeam();
+    if (document.getElementById('serviceGrid')) loadServicesPreview();
+    if (document.getElementById('fullServicesGrid')) loadFullServices();
+    if (document.getElementById('portfolioGrid')) {
+        loadPortfolio();
+        setupPortfolioFilters();
+    }
+    if (document.getElementById('featuredProject') || document.getElementById('upcomingProjects')) {
+        loadProjects();
     }
 
-    // Pages spécifiques
-    if (path.includes('team.html')) loadFullTeam();
-    if (path.includes('services.html')) loadFullServices();
-    if (path.includes('portfolio.html')) loadPortfolio();
-    if (path.includes('projects.html')) loadProjects();
+    console.log('✅ loadData.js terminé');
 });
